@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodexOrbit - Exploring the Digital Universe</title>
+    <link href="assets/logo.png" rel="icon" type="image/png">
+    <title>Codex Orbit - Developer Portfolio & Blog</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,46 +14,63 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #f8f9fa;
+            --accent-color: #007bff;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.5;
-            color: #263238;
-            background: linear-gradient(135deg, #FF5722 0%, #FFC107 100%);
-            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--secondary-color);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
+        /* Header & Navigation */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(255, 87, 34, 0.2);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--border-color);
         }
 
         nav {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 1rem 2rem;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #FF5722, #FFC107);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
         }
 
         .nav-links {
@@ -61,101 +81,127 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #263238;
+            color: var(--text-color);
             font-weight: 500;
             transition: color 0.3s ease;
-            position: relative;
+            cursor: pointer;
         }
 
-        .nav-links a:hover {
-            color: #FF5722;
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, #FF5722, #FFC107);
-            transition: width 0.3s ease;
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .page {
+            display: none;
+            padding: 2rem 0;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         /* Hero Section */
         .hero {
-            margin-top: 80px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c3e50 100%);
+            color: white;
             padding: 4rem 0;
             text-align: center;
-            color: white;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease;
+            animation: fadeInUp 1s ease-out;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s both;
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
 
         .cta-button {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--accent-color);
             color: white;
             padding: 1rem 2rem;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: fadeInUp 1s ease 0.4s both;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.4s both;
         }
 
         .cta-button:hover {
-            background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 87, 34, 0.3);
+            box-shadow: 0 8px 25px rgba(0,123,255,0.3);
         }
 
-        /* Main Content */
-        .main-content {
-            background: #F5F7FA;
-            border-radius: 20px 20px 0 0;
-            margin-top: 2rem;
-            min-height: 70vh;
-            box-shadow: 0 -10px 50px rgba(255, 87, 34, 0.1);
+        /* Skills Section */
+        .skills {
+            padding: 4rem 0;
+            background: white;
         }
 
-        .content-wrapper {
-            padding: 3rem 0;
+        .skills h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .skill-card i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
         }
 
         /* Blog Section */
-        .blog-section {
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            background: linear-gradient(45deg, #FF5722, #FFC107);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -163,77 +209,95 @@
             margin-top: 2rem;
         }
 
-        .blog-card {
+        .blog-post {
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(255, 87, 34, 0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
         }
 
-        .blog-card:hover {
+        .blog-post:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 87, 34, 0.2);
         }
 
-        .blog-image {
-            width: 100%;
+        .blog-post-image {
             height: 200px;
-            background: linear-gradient(45deg, #FF5722, #FFC107);
+            background: linear-gradient(45deg, var(--accent-color), #28a745);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 3rem;
         }
 
-        .blog-content {
+        .blog-post-content {
             padding: 1.5rem;
         }
 
-        .blog-title {
-            font-size: 1.3rem;
+        .blog-post h3 {
             margin-bottom: 0.5rem;
-            color: #263238;
-        }
-
-        .blog-excerpt {
-            color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.6;
+            color: var(--primary-color);
         }
 
         .blog-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            color: #666;
             font-size: 0.9rem;
-            color: #999;
+            margin-bottom: 1rem;
         }
 
         .read-more {
-            color: #FF5722;
+            color: var(--accent-color);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
+            font-weight: bold;
         }
 
-        .read-more:hover {
-            color: #FFC107;
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-image {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--accent-color), #28a745);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 6rem;
+            margin: 0 auto;
+        }
+
+        .about-text h2 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
         /* Contact Section */
-        .contact-section {
-            background: white;
-            padding: 4rem 0;
-            margin-top: 4rem;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
         }
 
         .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
         }
 
         .form-group {
@@ -243,114 +307,92 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #263238;
+            font-weight: bold;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
-            border: 2px solid #f0f0f0;
-            border-radius: 10px;
+            padding: 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
             font-size: 1rem;
             transition: border-color 0.3s ease;
-            background: #F5F7FA;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #FF5722;
-            box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
+            border-color: var(--accent-color);
         }
 
         .submit-btn {
-            background: linear-gradient(45deg, #FF5722, #FFC107);
+            background: var(--accent-color);
             color: white;
             padding: 1rem 2rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 5px;
             font-size: 1rem;
-            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
+            transition: background 0.3s ease;
         }
 
         .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 87, 34, 0.3);
+            background: #0056b3;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            width: 30px;
         }
 
         /* Social Links */
-        .social-section {
-            text-align: center;
-            margin-top: 3rem;
-        }
-
         .social-links {
             display: flex;
+            gap: 1rem;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
         }
 
-        .social-link {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #FF5722, #FFC107);
-            border-radius: 50%;
+        .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
             color: white;
+            border-radius: 50%;
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
+            transition: transform 0.3s ease, background 0.3s ease;
         }
 
-        .social-link:hover {
+        .social-links a:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 87, 34, 0.3);
+            background: #0056b3;
         }
 
         /* Footer */
         footer {
-            background: #263238;
+            background: var(--primary-color);
             color: white;
             text-align: center;
             padding: 2rem 0;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-links a {
-            color: #FFC107;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #FF5722;
         }
 
         /* Animations */
@@ -366,335 +408,438 @@
         }
 
         .fade-in {
-            animation: fadeInUp 0.6s ease forwards;
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        /* Mobile Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
-            .hero p {
-                font-size: 1.1rem;
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
 
             .blog-grid {
                 grid-template-columns: 1fr;
             }
-
-            .social-links {
-                flex-wrap: wrap;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
-        /* Accent Elements */
-        .accent-dot {
-            width: 8px;
-            height: 8px;
-            background: #039BE5;
-            border-radius: 50%;
-            display: inline-block;
-            margin: 0 0.5rem;
-        }
-
-        .highlight {
-            background: linear-gradient(45deg, #FFC107, #FF5722);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 600;
-        }
-
-        /* Blue accent for calm elements */
-        .calm-accent {
-            color: #039BE5;
-        }
-
-        .calm-border {
-            border-left: 4px solid #039BE5;
-            padding-left: 1rem;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">CodexOrbit</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <a class="logo" href="#">
+            <img alt="Codex Orbit Logo" class="logo-image" src="assets/logo.png">
+            Codex Orbit
+        </a>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Welcome to <span class="highlight">CodexOrbit</span></h1>
-            <p>Exploring the Digital Universe <span class="accent-dot"></span> One Code at a Time</p>
-            <a href="#blog" class="cta-button">Explore My Blogs</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a class="active" href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('blog')">Blog</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </section>
+    </nav>
+</header>
 
-    <main class="main-content">
-        <div class="container">
-            <div class="content-wrapper">
-                <section id="blog" class="blog-section">
-                    <h2 class="section-title">Latest Blog Posts</h2>
-                    <div class="blog-grid">
-                        <article class="blog-card">
-                            <div class="blog-image">
-                                <span>Featured Post</span>
-                            </div>
-                            <div class="blog-content">
-                                <h3 class="blog-title">The Future of Web Development</h3>
-                                <p class="blog-excerpt">Exploring emerging technologies and trends that will shape the future of web development, from AI integration to new frameworks...</p>
-                                <div class="blog-meta">
-                                    <span class="calm-accent">March 15, 2024</span>
-                                    <a href="#blog-post-1" class="read-more">Read More →</a>
-                                </div>
-                            </div>
-                        </article>
+<main>
+    <!-- Home Page -->
+    <div class="page active" id="home">
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Codex Orbit</h1>
+                <p>8+ Years of Development Excellence | Building the Future with Code</p>
+                <a class="cta-button" href="#" onclick="showPage('about')">Discover My Journey</a>
+            </div>
+        </section>
 
-                        <article class="blog-card">
-                            <div class="blog-image">
-                                <span>Tech Insights</span>
-                            </div>
-                            <div class="blog-content">
-                                <h3 class="blog-title">Building Scalable APIs with Node.js</h3>
-                                <p class="blog-excerpt">A comprehensive guide to creating robust and scalable APIs using Node.js, covering best practices and performance optimization...</p>
-                                <div class="blog-meta">
-                                    <span class="calm-accent">March 10, 2024</span>
-                                    <a href="#blog-post-2" class="read-more">Read More →</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="blog-card">
-                            <div class="blog-image">
-                                <span>Tutorial</span>
-                            </div>
-                            <div class="blog-content">
-                                <h3 class="blog-title">React Performance Optimization</h3>
-                                <p class="blog-excerpt">Learn advanced techniques to optimize React applications for better performance, including lazy loading, memoization, and more...</p>
-                                <div class="blog-meta">
-                                    <span class="calm-accent">March 5, 2024</span>
-                                    <a href="#blog-post-3" class="read-more">Read More →</a>
-                                </div>
-                            </div>
-                        </article>
+        <section class="skills">
+            <div class="container">
+                <h2>Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-js-square"></i>
+                        <h3>Frontend Development</h3>
+                        <p>React, Vue.js, Angular, TypeScript, Modern CSS</p>
                     </div>
-                </section>
-
-                <section id="about" class="blog-section">
-                    <h2 class="section-title">About CodexOrbit</h2>
-                    <div class="calm-border">
-                        <p style="font-size: 1.1rem; line-height: 1.8;">
-                            Welcome to <span class="highlight">CodexOrbit</span>, your destination for insightful technology content and programming tutorials. I'm passionate about sharing knowledge, exploring new technologies, and helping developers grow in their journey.
-                        </p>
-                        <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 1rem;">
-                            Here you'll find <span class="highlight">in-depth articles</span>, practical tutorials, and thought-provoking discussions about the ever-evolving world of technology and software development.
-                        </p>
+                    <div class="skill-card">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend Development</h3>
+                        <p>Node.js, Python, PHP, REST APIs, GraphQL</p>
                     </div>
-                </section>
-            </div>
-        </div>
-    </main>
-
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <form class="contact-form" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-
-            <div class="social-section">
-                <h3 class="section-title" style="font-size: 1.8rem;">Connect With Me</h3>
-                <div class="social-links">
-                    <a href="#social-twitter" class="social-link" title="Twitter">
-                        <span>𝕏</span>
-                    </a>
-                    <a href="#social-linkedin" class="social-link" title="LinkedIn">
-                        <span>in</span>
-                    </a>
-                    <a href="#social-github" class="social-link" title="GitHub">
-                        <span>GH</span>
-                    </a>
-                    <a href="#social-youtube" class="social-link" title="YouTube">
-                        <span>▶</span>
-                    </a>
-                    <a href="#contact" class="social-link" title="Email">
-                        <span>@</span>
-                    </a>
+                    <div class="skill-card">
+                        <i class="fas fa-database"></i>
+                        <h3>Database & Cloud</h3>
+                        <p>MongoDB, PostgreSQL, AWS, Docker, Kubernetes</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Development</h3>
+                        <p>React Native, Flutter, Progressive Web Apps</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#privacy-policy">Privacy Policy</a>
-                <a href="#terms-of-service">Terms of Service</a>
-                <a href="#rss-feed">RSS Feed</a>
-                <a href="#sitemap">Sitemap</a>
+    <!-- About Page -->
+    <div class="page" id="about">
+        <section class="container">
+            <div class="about-content fade-in">
+                <div class="about-image">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Welcome! I'm a passionate software developer with over 8 years of experience
+                        in creating innovative digital solutions. My journey in the tech world has
+                        been driven by curiosity, continuous learning, and a deep love for
+                        problem-solving.</p>
+
+                    <p>Throughout my career, I've had the privilege of working on diverse projects
+                        ranging from enterprise applications to cutting-edge startups. I specialize
+                        in full-stack development, with expertise in modern JavaScript frameworks,
+                        cloud technologies, and scalable architecture design.</p>
+
+                    <p>When I'm not coding, I enjoy sharing knowledge through this blog,
+                        contributing to open-source projects, and exploring the latest trends in
+                        technology. I believe in the power of clean code, user-centered design, and
+                        collaborative development.</p>
+
+                    <p>Currently, I'm exploring opportunities in software development consulting and
+                        always open to exciting new challenges. Let's build something amazing
+                        together!</p>
+                </div>
             </div>
-            <p>&copy; 2024 CodexOrbit. All rights reserved. <span class="highlight">Made with passion for technology.</span></p>
-        </div>
-    </footer>
 
-    <script>
-        // Enhanced smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const target = document.querySelector(targetId);
-                
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                } else {
-                    // Handle links that don't have corresponding sections yet
-                    // You can add logic here to show a message or redirect to specific content
-                    console.log('Navigating to:', targetId);
-                    
-                    // Example: Show a temporary message for non-existent sections
-                    if (targetId.includes('blog-post-')) {
-                        showBlogPost(targetId);
-                    } else if (targetId.includes('social-')) {
-                        showSocialMessage(targetId);
-                    } else if (targetId.includes('privacy-policy') || targetId.includes('terms-of-service') || targetId.includes('rss-feed') || targetId.includes('sitemap')) {
-                        showPageMessage(targetId);
-                    }
-                }
-            });
-        });
+            <div class="social-links">
+                <a href="https://github.com/codexorbit" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/codexorbit" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/codexorbit" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:hello@codexorbit.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </section>
+    </div>
 
-        // Function to handle blog post navigation
-        function showBlogPost(postId) {
-            const blogSection = document.querySelector('#blog');
-            blogSection.scrollIntoView({ behavior: 'smooth' });
-            
-            // Highlight the corresponding blog card
-            const blogCards = document.querySelectorAll('.blog-card');
-            blogCards.forEach(card => card.style.transform = 'scale(1)');
-            
-            if (postId.includes('1')) {
-                blogCards[0].style.transform = 'scale(1.05)';
-                blogCards[0].style.boxShadow = '0 20px 60px rgba(255, 87, 34, 0.3)';
-            } else if (postId.includes('2')) {
-                blogCards[1].style.transform = 'scale(1.05)';
-                blogCards[1].style.boxShadow = '0 20px 60px rgba(255, 87, 34, 0.3)';
-            } else if (postId.includes('3')) {
-                blogCards[2].style.transform = 'scale(1.05)';
-                blogCards[2].style.boxShadow = '0 20px 60px rgba(255, 87, 34, 0.3)';
+    <!-- Blog Page -->
+    <div class="page" id="blog">
+        <section class="container">
+            <h1>Latest Blog Posts</h1>
+            <div class="blog-grid">
+                <article class="blog-post">
+                    <div class="blog-post-image">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Building Scalable React Applications</h3>
+                        <div class="blog-meta">
+                            <i class="fas fa-calendar"></i> March 15, 2024
+                            <i class="fas fa-user"></i> Codex Orbit
+                        </div>
+                        <p>Discover best practices for architecting large-scale React applications
+                            with performance optimization and maintainable code structure.</p>
+                        <a class="read-more" href="#">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-image">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Microservices with Docker and Kubernetes</h3>
+                        <div class="blog-meta">
+                            <i class="fas fa-calendar"></i> March 10, 2024
+                            <i class="fas fa-user"></i> Codex Orbit
+                        </div>
+                        <p>A comprehensive guide to building and deploying microservices
+                            architecture using containerization technologies.</p>
+                        <a class="read-more" href="#">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Database Optimization Techniques</h3>
+                        <div class="blog-meta">
+                            <i class="fas fa-calendar"></i> March 5, 2024
+                            <i class="fas fa-user"></i> Codex Orbit
+                        </div>
+                        <p>Learn advanced database optimization strategies to improve query
+                            performance and reduce server load.</p>
+                        <a class="read-more" href="#">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-image">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Modern JavaScript Features You Should Know</h3>
+                        <div class="blog-meta">
+                            <i class="fas fa-calendar"></i> February 28, 2024
+                            <i class="fas fa-user"></i> Codex Orbit
+                        </div>
+                        <p>Explore the latest JavaScript features and how they can improve your
+                            development workflow and code quality.</p>
+                        <a class="read-more" href="#">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Cross-Platform Mobile Development</h3>
+                        <div class="blog-meta">
+                            <i class="fas fa-calendar"></i> February 20, 2024
+                            <i class="fas fa-user"></i> Codex Orbit
+                        </div>
+                        <p>Compare React Native and Flutter for building high-performance mobile
+                            applications across platforms.</p>
+                        <a class="read-more" href="#">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-post-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Web Security Best Practices</h3>
+                        <div class="blog-meta">
+                            <i class="fas fa-calendar"></i> February 15, 2024
+                            <i class="fas fa-user"></i> Codex Orbit
+                        </div>
+                        <p>Essential security measures every developer should implement to protect
+                            web applications from common vulnerabilities.</p>
+                        <a class="read-more" href="#">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div class="page" id="contact">
+        <section class="container">
+            <h1>Get In Touch</h1>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h2>Send a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input id="name" name="name" required type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" required type="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input id="subject" name="subject" required type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required rows="5"></textarea>
+                        </div>
+                        <button class="submit-btn" type="submit">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h2>Let's Connect</h2>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong><br>
+                            hello@codexorbit.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong><br>
+                            Available upon request
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location</strong><br>
+                            Remote / Worldwide
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Response Time</strong><br>
+                            Within 24 hours
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/codexorbit" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/codexorbit" target="_blank"
+                           title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/codexorbit" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Codex Orbit. All rights reserved. | Built with passion for technology</p>
+    </div>
+</footer>
+
+<script>
+    // Page Navigation
+    function showPage(pageId) {
+        // Hide all pages
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => page.classList.remove('active'));
+
+        // Show selected page
+        document.getElementById(pageId).classList.add('active');
+
+        // Update navigation
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => link.classList.remove('active'));
+        event.target.classList.add('active');
+
+        // Close mobile menu
+        document.getElementById('navLinks').classList.remove('active');
+
+        // Scroll to top
+        window.scrollTo(0, 0);
+    }
+
+    // Mobile Menu Toggle
+    document.getElementById('mobileMenu').addEventListener('click', function() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('active');
+    });
+
+    // Contact Form Handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        // Here you would typically send the form data to a server
+        // For now, we'll just show an alert
+        alert(`Thank you ${name}! Your message has been received. I'll get back to you soon!`);
+
+        // Reset form
+        this.reset();
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
+        });
+    });
+
+    // Add scroll effect to navigation
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
         }
+    });
 
-        // Function to handle social media links
-        function showSocialMessage(socialId) {
-            const contactSection = document.querySelector('#contact');
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-            
-            // You can add your actual social media URLs here
-            const socialLinks = {
-                '#social-twitter': 'https://twitter.com/your-handle',
-                '#social-linkedin': 'https://linkedin.com/in/your-profile',
-                '#social-github': 'https://github.com/your-username',
-                '#social-youtube': 'https://youtube.com/your-channel'
-            };
-            
-            console.log('Social link clicked:', socialId);
-            // You can uncomment the line below to open in new tab if needed
-            // window.open(socialLinks[socialId], '_blank');
-        }
+    // Add fade-in animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-        // Function to handle footer page links
-        function showPageMessage(pageId) {
-            const footer = document.querySelector('footer');
-            footer.scrollIntoView({ behavior: 'smooth' });
-            
-            // Show a message about the page
-            const pageNames = {
-                '#privacy-policy': 'Privacy Policy',
-                '#terms-of-service': 'Terms of Service',
-                '#rss-feed': 'RSS Feed',
-                '#sitemap': 'Sitemap'
-            };
-            
-            console.log('Page link clicked:', pageNames[pageId]);
-        }
-
-        // Form submission handler
-        function handleSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            
-            // Show success message
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            
-            // Reset form
-            form.reset();
-        }
-
-        // Add fade-in animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.blog-card, .contact-form');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('fade-in');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.backdropFilter = 'blur(20px)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
             }
         });
-    </script>
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.skill-card, .blog-post, .about-content').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 </body>
 </html>
