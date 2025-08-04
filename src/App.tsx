@@ -4,7 +4,7 @@ import Blog from './pages/Blog'
 
 export default function App() {
   return (
-    <Router basename="/my-blog">
+    <Router basename="/codex-orbit">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog/:blogId" element={<Blog />} />
