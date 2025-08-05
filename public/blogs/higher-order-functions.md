@@ -1,4 +1,4 @@
-![HIGH ORDER FUNCTION](./assets/high_order_function.png)
+![HIGH ORDER FUNCTION](/assets/high_order_function.png)
 
 ## About me
 
