@@ -7,7 +7,7 @@ export default function Blog() {
   const [content, setContent] = useState('')
 
   useEffect(() => {
-    fetch(`/blogs/${blogId}.md`)
+    fetch(`/codex-orbit/blogs/${blogId}.md`)
       .then((res) => res.text())
       .then(setContent)
   }, [blogId])
