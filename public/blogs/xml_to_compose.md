@@ -1,6 +1,7 @@
+![XML TO COMPOSE](./assets/xml_to_compose.png)
 ## About me
 
-Hi! 👋 I’m **Sudesh Kumar**, a results-driven Android Developer with over **8 years** of experience
+Hi, I’m **Sudesh Kumar**, a results-driven Android Developer with over **8 years** of experience
 building high-performance mobile apps.
 
 I specialize in **Kotlin**, **Jetpack Compose**, and **modern Android architecture patterns** like
@@ -200,16 +201,10 @@ developer community, it’s clear that Compose isn’t just a trend—it’s the
 Whether you’re working on legacy projects or starting something brand new, I genuinely recommend
 giving Compose a real shot. Once it clicks, you’ll wonder how you ever built UI without it.
 
-Your future self will thank you.
+Happy Coding!
+Thanks!
 
-## What’s Next?
-
-In my next post, I’ll dive deeper into how I structure real-world Jetpack Compose projects using *
-*MVVM with Clean Architecture**. I’ll walk through folder structures, share reusable logic patterns,
-and show how it all fits together in Compose.
-
-If you’ve already made the switch to Compose—what was your turning point?  
-I’d love to hear your experience. Let’s chat in the comments or feel free to connect with me
-on [LinkedIn](https://www.linkedin.com/in/sudesh-kumar-android).
+**Sudesh Kumar**
+[www.codexorbit.com](https://www.codexorbit.com)
 
     
