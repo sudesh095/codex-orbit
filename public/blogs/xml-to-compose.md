@@ -1,4 +1,5 @@
 ![XML TO COMPOSE](./assets/xml_to_compose.png)
+
 ## About me
 
 Hi, I’m **Sudesh Kumar**, a results-driven Android Developer with over **8 years** of experience
@@ -40,7 +41,7 @@ And the biggest lessons I learned through the transition.
 Whether you’re just starting to explore Compose or still clinging to XML (no judgment — I’ve been
 there), I hope my journey helps you make sense of this shift in modern Android development.
 
-## TThe Old Way: XML and Its Growing Pains
+## The Old Way: XML and Its Growing Pains
 
 For a long time, the classic combo — XML for layouts and Java or Kotlin for logic — got the job
 done. It was the standard, and we got used to it.

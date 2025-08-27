@@ -1,47 +1,42 @@
 import { Link } from 'react-router-dom'
+import '../styles.css'
+
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
 const blogs = [
   {
     id: 'xml-to-compose',
     title: 'XML and Its Growing Pains',
-    subtitle: 'My journey from using XML for years to finally embracing Jetpack Compose—and why it changed everything for me.',
-    image: '/assets/xml_to_compose.png', // place your image in public/images/
+    subtitle: 'My journey from using XML for years to finally embracing Jetpack Compose.',
+    image: withBase('blogs/assets/xml_to_compose.png'),
+    file: withBase('blogs/xml-to-compose.md')
   },
   {
     id: 'higher-order-functions',
     title: 'High Order Functions',
-    subtitle: 'A simple way to write cleaner and smarter code by using functions inside functions.',
-    image: '/assets/higher-order-functions.png',
+    subtitle: 'Cleaner and smarter code with functions inside functions.',
+    image: withBase('blogs/assets/high_order_function.png'),
+    file: withBase('blogs/higher-order-functions.md')
   },
   {
     id: 'api-vs-implementation',
     title: 'API vs Implementation',
-    subtitle: 'Learn what api and implementation mean in Gradle and when you should use them.',
-    image: '/assets/api-vs-implementation.png',
+    subtitle: 'Learn what api and implementation mean in Gradle.',
+    image: withBase('blogs/assets/api_vs_implementation.png'),
+    file: withBase('blogs/api-vs-implementation.md')
   },
 ]
 
 export default function Home() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-6">My Blog</h1>
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+    <div className="container">
+      <div className="blog-grid">
         {blogs.map((blog) => (
-          <Link
-            to={`/blog/${blog.id}`}
-            key={blog.id}
-            className="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300"
-          >
-            <img
-              src={blog.image}
-              alt={blog.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-lg font-semibold text-gray-800">
-                {blog.title}
-              </h2>
-              <p className="text-gray-500 text-sm mt-2">{blog.subtitle}</p>
+          <Link to={`blogs/${blog.id}`} key={blog.id} className="blog-card">
+            <img src={blog.image} alt={blog.title} className="blog-image" />
+            <div className="blog-content">
+              <h2 className="blog-title">{blog.title}</h2>
+              <p className="blog-subtitle">{blog.subtitle}</p>
             </div>
           </Link>
         ))}
