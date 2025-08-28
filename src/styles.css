@@ -1,4 +1,11 @@
 /* Global */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   margin: 0;
   background: #f7f9fc;
