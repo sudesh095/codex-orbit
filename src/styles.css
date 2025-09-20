@@ -193,8 +193,8 @@ html, body {
 /* Better inline code styling */
 
 .markdown code {
-  background: #f4f4f4;  /* light gray */
-  color: #c7254e;       /* dark red */
+  background: #00000000;  /* light gray */
+  color: #f2e3e6;       /* dark red */
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-size: 0.9rem;
