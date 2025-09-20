@@ -22,7 +22,7 @@ const blogs = [
     id: 'inline-reified-noinline',
     title: 'Inline Reified Noinline',
     subtitle: 'Most essential for advanced Kotlin developers are `inline`, `noinline` crossinline`, and `reified`.',
-    image: withBase('blogs/assets/inline-reified-noinline.png'),
+    image: withBase('blogs/assets/inline_reified_noinline.png'),
     file: withBase('blogs/inline-reified-noinline.md')
   },
   {
