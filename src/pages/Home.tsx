@@ -5,11 +5,25 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
 const blogs = [
   {
+    id: 'viewmodel',
+    title: 'Viemodel and Its Working',
+    subtitle: ' ViewModel is one of the most powerful components of Android Jetpack.',
+    image: withBase('blogs/assets/viewmodel.png'),
+    file: withBase('blogs/viewmodel.md')
+  },
+  {
     id: 'xml-to-compose',
     title: 'XML and Its Growing Pains',
     subtitle: 'My journey from using XML for years to finally embracing Jetpack Compose.',
     image: withBase('blogs/assets/xml_to_compose.png'),
     file: withBase('blogs/xml-to-compose.md')
+  },
+  {
+    id: 'inline-reified-noinline',
+    title: 'Inline Reified Noinline',
+    subtitle: 'Most essential for advanced Kotlin developers are `inline`, `noinline` crossinline`, and `reified`.',
+    image: withBase('blogs/assets/inline-reified-noinline.png'),
+    file: withBase('blogs/inline-reified-noinline.md')
   },
   {
     id: 'higher-order-functions',
