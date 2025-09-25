@@ -1,4 +1,4 @@
-![VIEMODEL](https://github.com/user-attachments/assets/e9a9667e-a5c3-402e-8d33-ccbb7c8f8e01)
+![VIEMODEL](https://github.com/user-attachments/assets/eb472a7b-fb1a-4ad8-84ba-f330fbfe2fe4)
 
 ## About me
 
