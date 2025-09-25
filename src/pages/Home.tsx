@@ -8,7 +8,7 @@ const blogs = [
     id: 'viewmodel',
     title: 'Viemodel and Its Working',
     subtitle: ' ViewModel is one of the most powerful components of Android Jetpack.',
-    image: withBase('blogs/assets/viewmodel.png'),
+    image: 'https://github.com/user-attachments/assets/e9a9667e-a5c3-402e-8d33-ccbb7c8f8e01',
     file: withBase('blogs/viewmodel.md')
   },
   {
@@ -40,7 +40,7 @@ const blogs = [
     file: withBase('blogs/api-vs-implementation.md')
   },
 ]
-
+// https://github.com/user-attachments/assets/e9a9667e-a5c3-402e-8d33-ccbb7c8f8e01
 export default function Home() {
   return (
     <div className="container">
