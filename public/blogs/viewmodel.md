@@ -167,6 +167,8 @@ class FragmentB : Fragment() {
 - Avoid Singletons for UI state; use them for stateless dependencies.
 - Lifecycle of ActivityThread ≈ Application (both bound to process lifetime).
 
+You can explore the complete project on [GitHub](https://github.com/sudesh095/sudesh-learning.git). Try running it, check how we can use it properly.
+
 
 Happy Coding, Thanks!
 

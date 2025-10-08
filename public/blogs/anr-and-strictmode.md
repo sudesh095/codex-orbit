@@ -214,7 +214,7 @@ Open `traces.txt` → check the `main` thread stack.
 3. **Check FS/data/anr/** → see `main` thread stack  
 4. (Optional) **Perfetto** → visualize long main-thread block  
 
-That’s it! You now know how to **reproduce, capture, and analyze** an ANR like a pro 🚀  
+That’s it! You now know how to **reproduce, capture, and analyze** an ANR like a pro.  
 
 ---
 
@@ -228,6 +228,8 @@ They don’t add heavy code, but they save you from common mistakes that lead to
 - Use Bugreport to capture and analyze ANRs.  
 
 This simple workflow makes your apps more stable and your users happier.  
+
+You can explore the complete project on [GitHub](https://github.com/sudesh095/anr-demo.git). Try running it, check how we can produce ANR and Fix it.
 
 ---
 

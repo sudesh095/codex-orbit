@@ -218,7 +218,7 @@ html, body {
 /* Code blocks */
 .markdown pre {
   background: #061f29c3; /* Dark gray background */
-  color: #f4eded;      /* Light text */
+  color: #c53131;      /* Light text */
   padding: 1rem;
   border-radius: 8px;
   overflow-x: auto;
@@ -243,7 +243,7 @@ html, body {
   margin: 1.5rem 0;
   color: #555;
   font-style: italic;
-  background: #f9f9f9;
+  background: #df5252;
 }
 
 /* Responsive Images */
@@ -256,13 +256,13 @@ html, body {
 }
 
 /* Mobile Responsive */
-@media (max-width: 1024px) { /* ✅ tablet */
+@media (max-width: 1024px) { /* tablet */
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 640px) { /* ✅ mobile */
+@media (max-width: 640px) { /* mobile */
   .blog-grid {
     grid-template-columns: 1fr;
   }
