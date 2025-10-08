@@ -8,8 +8,22 @@ const blogs = [
     id: 'viewmodel',
     title: 'Viemodel and Its Working',
     subtitle: ' ViewModel is one of the most powerful components of Android Jetpack.',
-    image: 'https://github.com/user-attachments/assets/eb472a7b-fb1a-4ad8-84ba-f330fbfe2fe4',
+    image: 'https://github.com/user-attachments/assets/1566c600-4db7-4446-a9a6-2d2e60f4b779',
     file: withBase('blogs/viewmodel.md')
+  },
+  {
+    id: 'memory-leaks',
+    title: 'Android Memory Leaks',
+    subtitle: ' Memory leaks are one of the most common problems in Android development. They can lead to slow performance, app crashes, and frustrating user experiences. To help developers understand and prevent them.',
+    image: 'https://github.com/user-attachments/assets/df428ada-73e7-4411-a2f4-7d5a056d2612',
+    file: withBase('blogs/android-memory-leaks.md')
+  },
+  {
+    id: 'anr-and-strictmode',
+    title: 'Android ANR and Strict Mode Policy',
+    subtitle: ' If you have worked on Android apps for some time, you might have faced the scary ANR dialog: App isn’t responding. It usually means your main thread is blocked for too long. Catching these issues early can save you (and your users) a lot of pain.',
+    image: 'https://github.com/user-attachments/assets/8ed868fd-fdc6-4be4-99aa-f795d41d0b4c',
+    file: withBase('blogs/anr-and-strictmode.md')
   },
   {
     id: 'xml-to-compose',
