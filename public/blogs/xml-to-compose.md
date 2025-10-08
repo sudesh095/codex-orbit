@@ -1,4 +1,4 @@
-![XML TO COMPOSE](./assets/xml_to_compose.png)
+![XML TO COMPOSE](https://github.com/user-attachments/assets/443c6440-7419-4091-b588-b539e3edb2ea)
 
 ## About me
 

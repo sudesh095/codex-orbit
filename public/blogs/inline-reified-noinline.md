@@ -1,4 +1,4 @@
-![Inline Refied Noinline](./assets/inline_reified_noinline.png)
+![Inline Refied Noinline](https://github.com/user-attachments/assets/379398a1-b384-4d2d-aaca-6c90c0880230)
 
 ## About me
 

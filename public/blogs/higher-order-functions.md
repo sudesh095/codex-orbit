@@ -1,4 +1,4 @@
-![HIGH ORDER FUNCTION](./assets/high_order_function.png)
+![HIGH ORDER FUNCTION](https://github.com/user-attachments/assets/51df4533-8249-4080-8c04-62e867212440)
 
 ## About me
 

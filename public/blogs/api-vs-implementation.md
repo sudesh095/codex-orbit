@@ -1,4 +1,4 @@
-![API VS IMPLEMENTATION](./assets/api_vs_implementation.png)
+![API VS IMPLEMENTATION](https://github.com/user-attachments/assets/349babe3-9b53-44ad-9f79-f37926786e34)
 
 ## About me
 

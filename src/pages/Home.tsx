@@ -7,12 +7,12 @@ const blogs = [
   {
     id: 'viewmodel',
     title: 'Viemodel and Its Working',
-    subtitle: ' ViewModel is one of the most powerful components of Android Jetpack.',
-    image: 'https://github.com/user-attachments/assets/1566c600-4db7-4446-a9a6-2d2e60f4b779',
+    subtitle: ' Android’s ViewModel is a powerful component that keeps your app’s UI data alive even when the screen rotates, dark mode changes, or the system recreates your Activity. It helps separate UI logic from UI elements, making your code cleaner and more reliable. In this blog, you’ll learn how ViewModel works, how it survives configuration changes, and how tools like StateFlow and SavedStateHandle make managing state easier and safer in modern Android apps.',
+    image: 'https://github.com/user-attachments/assets/dc5233c4-5ae3-44f2-b013-543bc773c310',
     file: withBase('blogs/viewmodel.md')
   },
   {
-    id: 'memory-leaks',
+    id: 'android-memory-leaks',
     title: 'Android Memory Leaks',
     subtitle: ' Memory leaks are one of the most common problems in Android development. They can lead to slow performance, app crashes, and frustrating user experiences. To help developers understand and prevent them.',
     image: 'https://github.com/user-attachments/assets/df428ada-73e7-4411-a2f4-7d5a056d2612',
@@ -28,29 +28,29 @@ const blogs = [
   {
     id: 'xml-to-compose',
     title: 'XML and Its Growing Pains',
-    subtitle: 'My journey from using XML for years to finally embracing Jetpack Compose.',
-    image: withBase('blogs/assets/xml_to_compose.png'),
+    subtitle: 'After 7 years of building Android UIs with XML, I decided to switch to Jetpack Compose — and it completely changed how I think about UI development. In this post, I share my personal experience, what motivated the change, and how Compose made my code cleaner, faster, and more fun to build. If you’re still working with XML layouts, this post will help you understand why the switch is absolutely worth it.',
+    image: 'https://github.com/user-attachments/assets/443c6440-7419-4091-b588-b539e3edb2ea',
     file: withBase('blogs/xml-to-compose.md')
   },
   {
     id: 'inline-reified-noinline',
     title: 'Inline Reified Noinline',
-    subtitle: 'Most essential for advanced Kotlin developers are `inline`, `noinline` crossinline`, and `reified`.',
-    image: withBase('blogs/assets/inline_reified_noinline.png'),
+    subtitle: 'Kotlin has a few special keywords that often confuse developers at first: inline, noinline, crossinline, and reified. They’re not just fancy language features – they help improve performance, make generic code safer, and give us more flexibility with lambdas. In this post, I’ll explain them in plain English, with examples you can actually use in real projects.',
+    image: 'https://github.com/user-attachments/assets/379398a1-b384-4d2d-aaca-6c90c0880230',
     file: withBase('blogs/inline-reified-noinline.md')
   },
   {
     id: 'higher-order-functions',
     title: 'High Order Functions',
-    subtitle: 'Cleaner and smarter code with functions inside functions.',
-    image: withBase('blogs/assets/high_order_function.png'),
+    subtitle: 'Kotlin is a modern and expressive language that gives developers a lot of powerful tools to write better code. One of those tools—though it might sound a bit fancy at first—is the higher-order function. If you have come across this term but never really taken the time to explore it, don’t worry. This blog is here to break it down in a simple, easy-to-understand way.',
+    image: 'https://github.com/user-attachments/assets/51df4533-8249-4080-8c04-62e867212440',
     file: withBase('blogs/higher-order-functions.md')
   },
   {
     id: 'api-vs-implementation',
     title: 'API vs Implementation',
-    subtitle: 'Learn what api and implementation mean in Gradle.',
-    image: withBase('blogs/assets/api_vs_implementation.png'),
+    subtitle: 'An API (short for Application Programming Interface) is basically a set of rules or promises a class or module makes about what it can do. You don’t need to know how it works behind the scenes—you just need to know what’s available to use. It’s kind of like using a remote control: you press a button to change the channel, but you don’t need to know how the remote actually sends the signal to the TV.',
+    image: 'https://github.com/user-attachments/assets/349babe3-9b53-44ad-9f79-f37926786e34',
     file: withBase('blogs/api-vs-implementation.md')
   },
 ]
