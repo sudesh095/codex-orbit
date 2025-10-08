@@ -43,7 +43,7 @@ When a violation happens, StrictMode can:
 
 ## Enabling StrictMode  
 
-The best place to enable StrictMode is in your `Application` class.  
+The best place to enable StrictMode is in your Application class.  
 I usually enable it only in **debug builds**, because we don’t want users to see red flashes or random crashes in production.  
 
 ```kotlin
@@ -71,7 +71,7 @@ class MyApp : Application() {
 }
 ```
 
-And don’t forget to set your app class in `AndroidManifest.xml`:  
+And don’t forget to set your app class in AndroidManifest.xml:  
 ```xml
 <application
     android:name=".MyApp"
@@ -104,7 +104,7 @@ When you click this button in a debug build, Logcat will show:
 StrictMode policy violation: android.os.NetworkOnMainThreadException
 ```
 
-If you enabled `penaltyFlashScreen()`, the screen will flash red.  
+If you enabled penaltyFlashScreen(), the screen will flash red.  
 
 That’s StrictMode saving you from shipping an ANR.  
 
@@ -112,20 +112,20 @@ That’s StrictMode saving you from shipping an ANR.
 
 ## Why BuildConfig?  
 
-`BuildConfig` is a class generated automatically for every module.  
+BuildConfig is a class generated automatically for every module.  
 It gives you constants like:  
-- `BuildConfig.DEBUG` → true for debug build, false for release  
-- `BuildConfig.APPLICATION_ID`  
+- BuildConfig.DEBUG → true for debug build, false for release  
+- BuildConfig.APPLICATION_ID  
 - Your custom fields (API URL, flags, etc.)  
 
-I use `BuildConfig.DEBUG` to enable StrictMode only for debug:  
+I use BuildConfig.DEBUG to enable StrictMode only for debug:  
 ```kotlin
 if (BuildConfig.DEBUG) {
     // enable strict mode
 }
 ```
 
-You can also add your own values in `build.gradle`:
+You can also add your own values in build.gradle:
 ```kotlin
 buildTypes {
     debug {
@@ -170,17 +170,17 @@ Open a terminal and run:
 adb bugreport anr_report.zip
 ```  
 
-This creates a big ZIP file (`anr_report.zip`) with all logs and traces at that moment.  
+This creates a big ZIP file (anr_report.zip) with all logs and traces at that moment.  
 
 ---
 
 ### 3. Look Inside the Report  
-1. Unzip `anr_report.zip`.  
-2. Open the folder **`FS/data/anr/`** → you’ll see files like `anr_12345.txt`.  
+1. Unzip anr_report.zip.  
+2. Open the folder **FS/data/anr/** → you’ll see files like anr_12345.txt.  
 3. Open that file and search for:  
 
-- `am_anr` → tells you which component caused the ANR.  
-- `"main"` thread → shows what the main thread was doing (for example, stuck in `Thread.sleep`).  
+- am_anr → tells you which component caused the ANR.  
+- main thread → shows what the main thread was doing (for example, stuck in Thread.sleep).  
 
 ---
 
@@ -193,7 +193,7 @@ adb shell kill -s QUIT <pid>          # dump stacks into traces.txt
 adb pull /data/anr/traces.txt         # copy file to your PC
 ```  
 
-Open `traces.txt` → check the `main` thread stack.  
+Open traces.txt → check the main thread stack.  
 
 ---
 
@@ -209,9 +209,9 @@ Open `traces.txt` → check the `main` thread stack.
 ---
 
 ## In Short  
-1. **Freeze app** → e.g., `Thread.sleep(10000)`  
-2. **Run bugreport** → `adb bugreport anr_report.zip`  
-3. **Check FS/data/anr/** → see `main` thread stack  
+1. **Freeze app** → e.g., Thread.sleep(10000)
+2. **Run bugreport** → adb bugreport anr_report.zip
+3. **Check FS/data/anr/** → see main thread stack  
 4. (Optional) **Perfetto** → visualize long main-thread block  
 
 That’s it! You now know how to **reproduce, capture, and analyze** an ANR like a pro.  
