@@ -40,6 +40,13 @@ const blogs = [
     file: withBase('blogs/xml-to-compose.md')
   },
   {
+    id: 'janky-frames-android-compose',
+    title: 'Janky Frames and Rendering Issues in Android',
+    subtitle: 'Learn how to identify and fix janky frames using Perfetto’s frame timeline and smart Compose optimizations. This guide breaks down real examples, performance traps, and practical fixes — so your Android app always feels fast, fluid, and professional.',
+    image: 'https://github.com/user-attachments/assets/a14f12e6-67c7-469d-9a2c-ac0e0b1a27ca',
+    file: withBase('blogs/janky-frames-android-compose.md')
+  },
+  {
     id: 'inline-reified-noinline',
     title: 'Inline Reified Noinline',
     subtitle: 'Kotlin has a few special keywords that often confuse developers at first: inline, noinline, crossinline, and reified. They’re not just fancy language features – they help improve performance, make generic code safer, and give us more flexibility with lambdas. In this post, I’ll explain them in plain English, with examples you can actually use in real projects.',
