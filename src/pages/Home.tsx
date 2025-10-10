@@ -27,7 +27,7 @@ const blogs = [
   },
    {
     id: 'out-of-memory-in-android',
-    title: 'Out Of Memory in Android: Causes, Examples & Fixes',
+    title: 'Out Of Memory in Android: Causes & Fixes',
     subtitle: ' Out Of Memory (OOM) errors are common in Android development when an app exceeds available memory. Learn the most common causes like large bitmaps, memory leaks, and static references. This blog provides simple Kotlin examples, practical fixes, and tips to optimize your app performance.',
     image: 'https://github.com/user-attachments/assets/a84540cf-a436-48f3-97a5-d8cc348d0924',
     file: withBase('blogs/out-of-memory-in-android.md')
