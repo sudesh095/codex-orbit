@@ -19,7 +19,7 @@ at [www.codexorbit.com](https://www.codexorbit.com).
 
 Thanks for reading—and welcome to the journey!
 
-# Understanding `implementation` vs `api` in Android Gradle: A Deep Dive
+# Understanding **implementation** vs **api** in Android Gradle: A Deep Dive
 
 <!-- *Published on August 5, 2025* -->
 
@@ -78,7 +78,7 @@ follow the same commands.
 
 ---
 
-## Gradle Dependency Configurations: `api` vs `implementation`
+## Gradle Dependency Configurations: **api** vs **implementation**
 
 In Android development, it’s common to split your app into smaller, focused parts called **modules
 **. This helps keep your code organized and makes it easier to manage as the project grows.
@@ -104,9 +104,9 @@ Let’s explore more about it.
 
 ---
 
-## What `implementation` Means
+## What **implementation** Means
 
-When you use `implementation`, you’re saying:  
+When you use **implementation**, you’re saying:  
 “This dependency is just for this module’s internal use—no one else needs to know about it.”
 
 - Other modules won’t have access to it.
@@ -114,7 +114,7 @@ When you use `implementation`, you’re saying:
 - And as a bonus, it can make your builds faster, because fewer parts of the app need to recompile
   when something changes.
 
-### Example:
+### Example
 
 ```kotlin
 // core/build.gradle.kts
@@ -123,14 +123,14 @@ dependencies {
 }
 ```
 
-So, if the `app` module depends on `core`, it **won’t be able to see or use** anything from the
-`network` module directly—because `core` is keeping that dependency to itself.
+So, if the **app** module depends on **core**, it **won’t be able to see or use** anything from the
+**network** module directly—because **core** is keeping that dependency to itself.
 
 ---
 
-## What `api` Means
+## What **api** Means
 
-When you use `api`, you’re saying:  
+When you use **api**, you’re saying:  
 “This dependency is part of what I’m offering to other modules.”
 
 - Any module that depends on yours can also use this dependency.
@@ -138,7 +138,7 @@ When you use `api`, you’re saying:
 - But be careful—if that shared dependency changes, other modules might need to recompile too, which
   can slow down your build.
 
-### Example:
+### Example
 
 ```kotlin
 // core/build.gradle.kts
@@ -147,8 +147,8 @@ dependencies {
 }
 ```
 
-That means the `app` module can now directly use any public classes from both `core` and `network`
-—because `core` is openly sharing its `network` dependency.
+That means the **app** module can now directly use any public classes from both **core** and **network**
+—because **core** is openly sharing its **network** dependency.
 
 ---
 
@@ -163,10 +163,9 @@ That means the `app` module can now directly use any public classes from both `c
 
 ## Real Project Example
 
-### Project Layout:
+### Project Layout
 
-```
-MyApp/
+```MyApp/
 ├── app/
 ├── core/
 ├── network/
@@ -188,20 +187,20 @@ class Repository(private val api: ApiService) {
 }
 ```
 
-#### Now in `core/build.gradle.kts`:
+#### Now in **core/build.gradle.kts**
 
-- If you use `implementation`, the `ApiService` stays hidden inside the `core` module. The `app`
+- If you use **implementation**, the **ApiService** stays hidden inside the **core** module. The **app**
   module won’t even know it exists.
-- But if you use `api`, `core` is basically saying, “Hey, I’m using `ApiService`, and you can use it
-  too.” So now, the `app` module can directly access `ApiService` without needing to add the
-  `network` module as a separate dependency.
+- But if you use **api**, **core** is basically saying, “Hey, I’m using **ApiService**, and you can use it
+  too.” So now, the **app** module can directly access **ApiService** without needing to add the
+  **network** module as a separate dependency.
 
 ---
 
 ## Best Practices
 
-1. Stick with `implementation` most of the time — it’s safer and keeps things tidy.
-2. Use `api` only when you really need to share a dependency with other modules.
+1. Stick with **implementation** most of the time — it’s safer and keeps things tidy.
+2. Use **api** only when you really need to share a dependency with other modules.
 3. Keep your modules focused and well-separated — don’t let everything depend on everything else. It
    makes your project easier to manage.
 
@@ -209,11 +208,11 @@ class Repository(private val api: ApiService) {
 
 ## Summary
 
-Knowing when to use `api` and when to use `implementation` can really make a difference in how clean
+Knowing when to use **api** and when to use **implementation** can really make a difference in how clean
 and scalable your Android project is.
 
-- `api` is for when you want to share something with other modules.
-- `implementation` is for keeping things private and speeding up your builds.
+- **api** is for when you want to share something with other modules.
+- **implementation** is for keeping things private and speeding up your builds.
 
 Use them smartly, and you’ll have an app that’s easier to manage, faster to build, and better
 organized.
@@ -222,9 +221,9 @@ organized.
 
 ## Conclusion
 
-When you use `api` and `implementation` the right way, your project ends up with cleaner
+When you use **api** and **implementation** the right way, your project ends up with cleaner
 architecture, quicker builds, and a smoother developer experience. So don’t just throw every library
-under `api`—be intentional. Ask yourself: “Do other modules really need to see this?”
+under **api**—be intentional. Ask yourself: “Do other modules really need to see this?”
 
 Happy Coding, Thanks!
 

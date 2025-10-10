@@ -65,7 +65,7 @@ The study app is designed to be simple and interactive:
 1. **Home Screen:** Buttons are grouped to trigger different leak examples.
 2. **Activities and Compose Screens:** Demonstrate leaks and fixes for various scenarios.
 3. **Safe vs Unsafe Examples:** Each scenario has a “leaky” and “fixed” version to make comparisons easy.
-4. **Adapters and Bitmaps:** Shows the difference between holding Activity references vs using `applicationContext`, and unbounded vs bounded caches using `LruCache`.
+4. **Adapters and Bitmaps:** Shows the difference between holding Activity references vs using **applicationContext**, and unbounded vs bounded caches using **LruCache**.
 
 You can run the app on a device or emulator and explore different leak scenarios to see how memory behaves.
 

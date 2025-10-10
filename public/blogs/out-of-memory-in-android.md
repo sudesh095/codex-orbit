@@ -46,10 +46,10 @@ object MemoryLeakSingleton {
     var context: Context? = null
 }
 ```
-If you assign an `Activity` context here, it stays in memory forever — even after the Activity is closed.
+If you assign an **Activity** context here, it stays in memory forever — even after the Activity is closed.
 
 **Fix:**  
-Always use `applicationContext` instead of `Activity` context in singletons.
+Always use **applicationContext** instead of **Activity** context in singletons.
 
 ### 2. Loading Large Bitmaps
 
@@ -62,7 +62,7 @@ val bitmap = BitmapFactory.decodeResource(resources, R.drawable.large_image)
 ```
 
 **Fix:**
-Use `inSampleSize` to reduce bitmap size.
+Use **inSampleSize** to reduce bitmap size.
 ```kotlin
 val options = BitmapFactory.Options().apply { inSampleSize = 4 }
 val bitmap = BitmapFactory.decodeResource(resources, R.drawable.large_image, options)
@@ -70,7 +70,7 @@ val bitmap = BitmapFactory.decodeResource(resources, R.drawable.large_image, opt
 
 ### 3. Handlers, Runnables, and Delayed Tasks
 
-If you post a `Runnable` with delay on an Activity and forget to remove it on destroy — memory leak occurs.
+If you post a **Runnable** with delay on an Activity and forget to remove it on destroy — memory leak occurs.
 
 **Example:**
 ```kotlin
@@ -97,11 +97,11 @@ val jsonArray = JSONArray(largeJsonString)
 ```
 
 **Fix:**
-Use **streaming parsers** like `JsonReader` or **pagination** to load smaller chunks.
+Use **streaming parsers** like **JsonReader** or **pagination** to load smaller chunks.
 
 ### 5. Context Misuse
 
-Passing an `Activity` context to adapters, singletons, or libraries keeps your entire Activity in memory.
+Passing an **Activity** context to adapters, singletons, or libraries keeps your entire Activity in memory.
 
 **Fix:**
 Always prefer:
@@ -120,7 +120,7 @@ FileInputStream(file).use { input ->
 }
 ```
 
-The `.use {}` block automatically closes the resource.
+The **.use {}** block automatically closes the resource.
 
 ### 7. Heavy Animations or GIFs
 
@@ -132,11 +132,11 @@ Large frame-by-frame animations load every frame in memory.
 Old fragments or retained instances can keep activities alive in memory.
 
 **Fix:**  
-Use `ViewModel` to hold data across configuration changes instead of `retainInstance`.
+Use **ViewModel** to hold data across configuration changes instead of **retainInstance**.
 
 ### 9. Glide or Image Library Misuse
 
-Calling `.submit()` without clearing references can keep bitmaps alive.
+Calling **.submit()** without clearing references can keep bitmaps alive.
 
 **Fix:**
 ```kotlin
@@ -196,4 +196,4 @@ Happy Coding, Thanks!
 
 
 ### Tags:
-`#AndroidDevelopment` `#OOM` `#MemoryLeak` `#JetpackCompose` `#Glide` `#KotlinTips`
+**#AndroidDevelopment** **#OOM** **#MemoryLeak** **#JetpackCompose** **#Glide** **#KotlinTips**
