@@ -139,12 +139,12 @@ Take screenshots from Perfetto to visualize improvement.
 
 ## Summary
 
-| Problem | Cause | Solution |
-|----------|--------|-----------|
-| Janky frames | Heavy main-thread work | Move to background with coroutines |
-| Frequent recompositions | Inefficient state observation | Use **derivedStateOf**, **remember** |
-| Slow rendering | Overdraw, deep layouts | Simplify UI tree |
-| Scroll lag | Too many items rendered | Use pagination |
+| Problem         |         Cause         |         Solution |
+|------------------|------------------------|-------------------|
+| Janky frames         |         Heavy main-thread work          |         Move to background with coroutines |
+| Frequent recompositions           |         Inefficient state observation         |         Use **derivedStateOf**, **remember** |
+| Slow rendering          |         Overdraw, deep layouts         |         Simplify UI tree |
+| Scroll lag          |         Too many items rendered         |          Use pagination |
 
 ---
 
