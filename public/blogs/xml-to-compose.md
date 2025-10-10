@@ -184,7 +184,7 @@ really well:
    up development.
 
 4. **Kept the ViewModel layer**: I didn’t change my architecture. I continued using existing
-   `ViewModel`s and `StateFlow` for managing state, and just plugged them into my new Composables.
+   **ViewModel**'s and **StateFlow** for managing state, and just plugged them into my new Composables.
 
 This phased approach made adoption smooth and safe—and over time, more of the app naturally shifted
 to Compose without needing a big rewrite.

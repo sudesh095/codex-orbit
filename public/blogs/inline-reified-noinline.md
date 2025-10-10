@@ -34,7 +34,7 @@ They’re not just fancy language features – they help improve performance, ma
 Normally, when you call a function, Kotlin sets up a new stack frame. This is fine most of the time, but it adds a bit of overhead. With higher-order functions (functions that take lambdas), this overhead also includes creating objects for the lambdas.
 
 The **inline** keyword tells the compiler:  
-👉 “Instead of calling this function, copy its body directly into the place where it’s used.”  
+“Instead of calling this function, copy its body directly into the place where it’s used.”  
 
 This saves both the function call overhead and the lambda allocation.
 
