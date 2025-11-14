@@ -6,7 +6,8 @@ import { BlogsPage } from './pages/BlogsPage';
 import { AchievementsPage } from './pages/AchievementsPage';
 import { ContactPage } from './pages/ContactPage';
 
-type Page = 'home' | 'projects' | 'blogs' | 'achievements' | 'contact';
+// type Page = 'home' | 'projects' | 'blogs' | 'achievements' | 'contact';
+type Page = 'home' | 'projects' | 'blogs' | 'contact';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -23,8 +24,8 @@ export default function App() {
         return <ProjectsPage />;
       case 'blogs':
         return <BlogsPage />;
-      case 'achievements':
-        return <AchievementsPage />;
+      // case 'achievements':
+      //   return <AchievementsPage />;
       case 'contact':
         return <ContactPage />;
       default:

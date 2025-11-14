@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { marked } from "marked";
 import { useEffect, useState } from 'react'
-import '../styles.css'
+import './styles/globals.css'
 
 export default function Blog() {
   const { blogId } = useParams()

@@ -30,19 +30,19 @@ export function ContactPage() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'sudesh.kumar@example.com',
-      link: 'mailto:sudesh.kumar@example.com'
+      value: 'itsudesh95@gmail.com',
+      link: 'mailto:itsudesh95@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: '+91 8427444424',
+      link: 'tel:+918427444424'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA, USA',
+      value: 'New Delhi, India',
       link: null
     },
     {
@@ -57,22 +57,22 @@ export function ContactPage() {
     {
       icon: Github,
       name: 'GitHub',
-      handle: '@sudeshkumar',
-      url: 'https://github.com',
+      handle: '@sudesh095',
+      url: 'https://github.com/sudesh095',
       color: 'text-[#17A7FF]'
     },
     {
       icon: Linkedin,
       name: 'LinkedIn',
-      handle: 'sudesh-kumar',
-      url: 'https://linkedin.com',
+      handle: 'sudesh-kumar-android',
+      url: 'https://www.linkedin.com/in/sudesh-kumar-android/',
       color: 'text-[#DE3484]'
     },
     {
       icon: Twitter,
       name: 'Twitter',
-      handle: '@sudeshdev',
-      url: 'https://twitter.com',
+      handle: '@itsudesh95',
+      url: 'https://x.com/itsudesh95',
       color: 'text-[#17A7FF]'
     }
   ];

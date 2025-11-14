@@ -72,7 +72,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
   ];
 
   const handleResumeDownload = () => {
-    window.open("https://drive.google.com/your-resume-link", "_blank");
+    window.open("https://drive.google.com/file/d/1ONamCIU716FRfaBpBWTGbGg5NC7r4w2r/view?usp=sharing", "_blank");
   };
 
   return (

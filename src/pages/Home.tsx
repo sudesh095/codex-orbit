@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import '../styles.css'
+import '../styles/globals.css'
 
 const withBase = (path: string) => `${import.meta.env.BASE_URL}${path}`
 

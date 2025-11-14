@@ -15,7 +15,7 @@ export function Layout({ children, currentPage, onNavigate }: LayoutProps) {
     { name: 'Home', path: 'home' },
     { name: 'Projects', path: 'projects' },
     { name: 'Blogs', path: 'blogs' },
-    { name: 'Achievements', path: 'achievements' },
+    // { name: 'Achievements', path: 'achievements' },
     { name: 'Contact', path: 'contact' }
   ];
 
@@ -100,13 +100,13 @@ export function Layout({ children, currentPage, onNavigate }: LayoutProps) {
             </p>
             
             <div className="flex items-center gap-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-[#17A7FF] hover:text-[#17A7FF]/80 transition-colors">
+              <a href="https://github.com/sudesh095" target="_blank" rel="noopener noreferrer" className="text-[#17A7FF] hover:text-[#17A7FF]/80 transition-colors">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#17A7FF] hover:text-[#17A7FF]/80 transition-colors">
+              <a href="https://www.linkedin.com/in/sudesh-kumar-android/" target="_blank" rel="noopener noreferrer" className="text-[#17A7FF] hover:text-[#17A7FF]/80 transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="mailto:contact@example.com" className="text-[#17A7FF] hover:text-[#17A7FF]/80 transition-colors">
+              <a href="mailto:itsudesh95@gmail.com" className="text-[#17A7FF] hover:text-[#17A7FF]/80 transition-colors">
                 <Mail size={20} />
               </a>
             </div>
