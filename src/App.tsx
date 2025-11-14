@@ -1,17 +1,40 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Blog from './pages/Blog'
-import Layout from './Layout'
+import { useState } from 'react';
+import { Layout } from './components/Layout';
+import { HomePage } from './pages/HomePage';
+import { ProjectsPage } from './pages/ProjectsPage';
+import { BlogsPage } from './pages/BlogsPage';
+import { AchievementsPage } from './pages/AchievementsPage';
+import { ContactPage } from './pages/ContactPage';
+
+type Page = 'home' | 'projects' | 'blogs' | 'achievements' | 'contact';
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState<Page>('home');
+
+  const handleNavigate = (page: string) => {
+    setCurrentPage(page as Page);
+  };
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <HomePage onNavigate={handleNavigate} />;
+      case 'projects':
+        return <ProjectsPage />;
+      case 'blogs':
+        return <BlogsPage />;
+      case 'achievements':
+        return <AchievementsPage />;
+      case 'contact':
+        return <ContactPage />;
+      default:
+        return <HomePage onNavigate={handleNavigate} />;
+    }
+  };
+
   return (
-    <Router basename={import.meta.env.BASE_URL}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="blogs/:blogId" element={<Blog />} />
-        </Route>
-      </Routes>
-    </Router>
-  )
+    <Layout currentPage={currentPage} onNavigate={handleNavigate}>
+      {renderPage()}
+    </Layout>
+  );
 }
