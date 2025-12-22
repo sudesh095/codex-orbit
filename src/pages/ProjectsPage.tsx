@@ -7,8 +7,8 @@ export function ProjectsPage() {
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const filters = ['all', 'android', 'kmp', 'web', 'open-source'];
-
+  const filters = ['all', 'android', 'kmp'];
+// , 'web', 'open-source'
   const projects = [
     {
       title: 'HealthTrack Pro',
@@ -77,29 +77,29 @@ export function ProjectsPage() {
       githubUrl: '#',
       liveUrl: '#'
     },
-    {
-      title: 'Portfolio CMS',
-      description: 'Full-stack portfolio management system with Next.js frontend and Node.js backend. Features admin dashboard, blog management, and analytics.',
-      tags: ['React', 'Next.js', 'Node.js', 'MongoDB'],
-      category: 'web',
-      githubUrl: '#',
-      liveUrl: '#'
-    },
-    {
-      title: 'Kotlin Extensions Library',
-      description: 'Open-source collection of useful Kotlin extension functions and utilities. Over 1000+ stars on GitHub with active community contributions.',
-      tags: ['Kotlin', 'Open Source', 'Library', 'Android'],
-      category: 'open-source',
-      githubUrl: '#'
-    },
-    {
-      title: 'Compose UI Kit',
-      description: 'Comprehensive Jetpack Compose UI component library with 50+ customizable components, theming support, and extensive documentation.',
-      tags: ['Compose', 'UI Library', 'Open Source', 'Kotlin'],
-      category: 'open-source',
-      githubUrl: '#',
-      liveUrl: '#'
-    }
+    // {
+    //   title: 'Portfolio CMS',
+    //   description: 'Full-stack portfolio management system with Next.js frontend and Node.js backend. Features admin dashboard, blog management, and analytics.',
+    //   tags: ['React', 'Next.js', 'Node.js', 'MongoDB'],
+    //   category: 'web',
+    //   githubUrl: '#',
+    //   liveUrl: '#'
+    // },
+    // {
+    //   title: 'Kotlin Extensions Library',
+    //   description: 'Open-source collection of useful Kotlin extension functions and utilities. Over 1000+ stars on GitHub with active community contributions.',
+    //   tags: ['Kotlin', 'Open Source', 'Library', 'Android'],
+    //   category: 'open-source',
+    //   githubUrl: '#'
+    // },
+    // {
+    //   title: 'Compose UI Kit',
+    //   description: 'Comprehensive Jetpack Compose UI component library with 50+ customizable components, theming support, and extensive documentation.',
+    //   tags: ['Compose', 'UI Library', 'Open Source', 'Kotlin'],
+    //   category: 'open-source',
+    //   githubUrl: '#',
+    //   liveUrl: '#'
+    // }
   ];
 
   const filteredProjects = projects.filter(project => {
@@ -170,17 +170,17 @@ export function ProjectsPage() {
       {/* Stats */}
       <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
         <GlassCard className="p-6 text-center">
-          <div className="text-3xl mb-2 text-[#17A7FF]">{projects.length}</div>
+          <div className="text-3xl mb-2 text-[#17A7FF]">50+</div>
           <div className="text-sm text-gray-400">Total Projects</div>
         </GlassCard>
         <GlassCard className="p-6 text-center">
           <div className="text-3xl mb-2 text-[#DE3484]">50K+</div>
           <div className="text-sm text-gray-400">Lines of Code</div>
         </GlassCard>
-        <GlassCard className="p-6 text-center">
+        {/* <GlassCard className="p-6 text-center">
           <div className="text-3xl mb-2 text-[#17A7FF]">2K+</div>
           <div className="text-sm text-gray-400">GitHub Stars</div>
-        </GlassCard>
+        </GlassCard> */}
         <GlassCard className="p-6 text-center">
           <div className="text-3xl mb-2 text-[#DE3484]">15+</div>
           <div className="text-sm text-gray-400">Tech Stack</div>
