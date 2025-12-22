@@ -1,14 +1,32 @@
+import React from "react";
+import { IconType } from "react-icons";
+
 interface SkillCardProps {
   name: string;
+  icon: IconType;
 }
 
-export function SkillCard({ name }: SkillCardProps) {
+const SkillCard: React.FC<SkillCardProps> = ({ name, icon: Icon }) => {
   return (
-    <div className="flex flex-col items-center gap-2 min-w-[120px] group">
-      <div className="w-16 h-16 rounded-full bg-[#17A7FF] flex items-center justify-center shadow-[0_6px_20px_rgba(23,167,255,0.45)] group-hover:shadow-[0_8px_30px_rgba(23,167,255,0.6)] transition-all duration-300 group-hover:scale-110">
-        <div className="w-8 h-8 rounded-full bg-white/20"></div>
-      </div>
-      <span className="text-xs text-white text-center">{name}</span>
+    <div
+      className="
+        flex items-center gap-3 px-4 py-2
+        rounded-lg border
+        bg-white dark:bg-gray-900
+        shadow-sm
+        hover:scale-110 transition-transform duration-200
+      "
+    >
+      <Icon
+        size={22}
+        className="text-gray-700 dark:text-gray-200"
+      />
+
+      <span className="text-sm font-medium whitespace-nowrap text-gray-800 dark:text-gray-100">
+        {name}
+      </span>
     </div>
   );
-}
+};
+
+export default React.memo(SkillCard);

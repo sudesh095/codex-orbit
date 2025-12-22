@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { NeonButton } from '../components/NeonButton';
-import { SkillCard } from '../components/SkillCard';
 import { GlassCard } from '../components/GlassCard';
 import { Code2, Zap, Shield, Users, Award, TrendingUp } from 'lucide-react';
+import SkillsSection from "../pages/SkillsSection";
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -31,15 +31,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
-  const skills = [
-    "Kotlin", "Java", "Jetpack Compose", "Coroutines", "Flow", "StateFlow", "SharedFlow", "MVVM",
-    "Clean Architecture", "Room", "SQLite", "WorkManager", "Hilt", "Dagger", "Koin", "Retrofit",
-    "OkHttp", "Glide", "Coil", "Socket.IO", "Firebase Auth", "Firestore", "FCM", "Crashlytics",
-    "Google Maps", "Payment Integrations", "Security", "Encryption", "Kotlin Multiplatform",
-    "Compose Multiplatform", "Ktor", "Kamel", "Node.js", "Express", "MongoDB", "AWS S3",
-    "Cloud Functions", "React", "Next.js", "Angular", "Tailwind CSS", "Figma", "UX", "Gradle",
-    "CI/CD", "Fastlane", "Docker", "Linux", "Git", "GitHub", "JUnit", "MockK", "Espresso", "Turbine"
-  ];
 
   const stats = [
     { number: '8+', label: 'Years Experience', icon: TrendingUp },
@@ -130,22 +121,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Skills Section */}
-      <section className="py-12 lg:py-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
-          <h2 className="text-[#DE3484] mb-2">Skills & Technologies</h2>
-          <p className="text-gray-400 mb-8">Comprehensive expertise across the mobile development ecosystem</p>
-        </div>
-        
-        <div 
-          ref={scrollerRef}
-          className="flex gap-8 overflow-x-hidden scrollbar-hide py-4"
-          style={{ scrollBehavior: 'auto' }}
-        >
-          {[...skills, ...skills].map((skill, index) => (
-            <SkillCard key={`${skill}-${index}`} name={skill} />
-          ))}
-        </div>
-      </section>
+       <SkillsSection />
 
       {/* Expertise Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-12 lg:py-16">

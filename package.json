@@ -13,6 +13,7 @@
     "marked": "^16.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
     "react-markdown": "^8.0.7",
     "react-router-dom": "^6.26.2",
     "remark-gfm": "^4.0.1"
