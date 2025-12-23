@@ -39,6 +39,13 @@ const blogs = [
     image: 'https://github.com/user-attachments/assets/443c6440-7419-4091-b588-b539e3edb2ea',
     file: withBase('blogs/xml-to-compose.md')
   },
+   {
+    id: 'janky-frames-android-compose',
+    title: 'Janky Frames and Rendering Issues in Android',
+    subtitle: 'Learn how to identify and fix janky frames using Perfetto’s frame timeline and smart Compose optimizations. This guide breaks down real examples, performance traps, and practical fixes — so your Android app always feels fast, fluid, and professional.',
+    image: 'https://github.com/user-attachments/assets/a14f12e6-67c7-469d-9a2c-ac0e0b1a27ca',
+    file: withBase('blogs/janky-frames-android-compose.md')
+  },
   {
     id: 'inline-reified-noinline',
     title: 'Inline Reified Noinline',

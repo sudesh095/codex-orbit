@@ -1,7 +1,9 @@
 import { GlassCard } from './GlassCard';
 import { Calendar, Clock } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 interface BlogCardProps {
+  id:string,
   title: string;
   excerpt: string;
   date: string;
@@ -10,9 +12,14 @@ interface BlogCardProps {
   image?: string;
 }
 
-export function BlogCard({ title, excerpt, date, readTime, category, image }: BlogCardProps) {
+export function BlogCard({ id,title, excerpt, date, readTime, category, image }: BlogCardProps) {
   return (
-    <GlassCard className="p-6 hover:border-[#DE3484]/50 transition-all duration-300 cursor-pointer group h-full flex flex-col">
+    // <Link
+    //   to={`/blogs/${id}`}
+    //   className="block h-full focus:outline-none"
+    // >
+    <GlassCard 
+       className="p-6 hover:border-[#DE3484]/50 transition-all duration-300 cursor-pointer group h-full flex flex-col">
       <div className="aspect-video bg-gradient-to-br from-[#17A7FF]/20 to-[#DE3484]/20 rounded-lg mb-4 overflow-hidden">
         {image ? (
           <img src={image} alt={title} className="w-full h-full object-cover" />
@@ -41,5 +48,6 @@ export function BlogCard({ title, excerpt, date, readTime, category, image }: Bl
         </span>
       </div>
     </GlassCard>
+    // </Link>
   );
 }

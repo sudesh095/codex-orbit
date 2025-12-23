@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { NeonButton } from '../components/NeonButton';
 import { GlassCard } from '../components/GlassCard';
-import { Code2, Zap, Shield, Users, Award, TrendingUp } from 'lucide-react';
+import { Code2, Zap, Shield, Users, Award, TrendingUp,  } from 'lucide-react';
 import SkillsSection from "../pages/SkillsSection";
 
 interface HomePageProps {
@@ -34,9 +34,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   const stats = [
     { number: '8+', label: 'Years Experience', icon: TrendingUp },
-    { number: '50+', label: 'Projects Completed', icon: Code2 },
-    { number: '30+', label: 'Technologies', icon: Zap },
-    { number: '15+', label: 'Awards', icon: Award }
+    { number: '20+', label: 'Projects Completed', icon: Code2 },
+    { number: '30+', label: 'Skills', icon: Zap },
+    { number: '6+', label: 'Mentored', icon: Award }
   ];
 
   const expertise = [
@@ -157,9 +157,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
             From enterprise solutions to innovative side projects, discover how I solve complex problems.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <NeonButton variant="blue" onClick={() => onNavigate('projects')}>
+            {/* <NeonButton variant="blue" onClick={() => onNavigate('projects')}>
               View Projects
-            </NeonButton>
+            </NeonButton> */}
             <NeonButton variant="pink" onClick={() => onNavigate('blogs')}>
               Read Blogs
             </NeonButton>

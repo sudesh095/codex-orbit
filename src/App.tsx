@@ -7,8 +7,8 @@ import { AchievementsPage } from './pages/AchievementsPage';
 import { ContactPage } from './pages/ContactPage';
 
 // type Page = 'home' | 'projects' | 'blogs' | 'achievements' | 'contact';
-type Page = 'home' | 'projects' | 'blogs' | 'contact';
-
+// type Page = 'home' | 'projects' | 'blogs' | 'contact';
+type Page = 'home' | 'blogs' | 'contact';
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
 
@@ -20,8 +20,8 @@ export default function App() {
     switch (currentPage) {
       case 'home':
         return <HomePage onNavigate={handleNavigate} />;
-      case 'projects':
-        return <ProjectsPage />;
+      // case 'projects':
+      //   return <ProjectsPage />;
       case 'blogs':
         return <BlogsPage />;
       // case 'achievements':

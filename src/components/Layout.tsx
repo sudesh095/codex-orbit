@@ -13,7 +13,7 @@ export function Layout({ children, currentPage, onNavigate }: LayoutProps) {
 
   const menuItems = [
     { name: 'Home', path: 'home' },
-    { name: 'Projects', path: 'projects' },
+    // { name: 'Projects', path: 'projects' },
     { name: 'Blogs', path: 'blogs' },
     // { name: 'Achievements', path: 'achievements' },
     { name: 'Contact', path: 'contact' }
