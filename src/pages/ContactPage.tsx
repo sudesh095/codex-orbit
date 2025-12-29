@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { GlassCard } from '../components/GlassCard';
 import { NeonButton } from '../components/NeonButton';
+import emailjs from "@emailjs/browser";
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageSquare } from 'lucide-react';
 
 export function ContactPage() {
@@ -14,9 +15,33 @@ export function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    const currentTime = new Date().toLocaleString("en-IN", {
+    dateStyle: "full",
+    timeStyle: "medium"
+  });
+
+
+     emailjs.send(
+    "service_ixfoxaa",
+    "template_8uk81uh",
+    {
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      time: currentTime,
+      to_email: "itsudesh95@gmail.com, reach@codexorbit.com"
+    },
+    "h5Gy7BaleIlOYCFPu"
+  )
+  .then(() => {
+    alert("Thank you for your message! I will get back to you soon.");
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  })
+  .catch((error) => {
+    console.error("Email error:", error);
+    alert("Failed to send message. Please try again.");
+  });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

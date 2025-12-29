@@ -77,11 +77,21 @@ export function HomePage() {
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Left */}
           <div className="flex-1 flex flex-col items-center lg:items-start gap-6">
-            <div className="w-44 h-44 lg:w-56 lg:h-56 rounded-full bg-gradient-to-br from-[#17A7FF]/30 to-[#DE3484]/30 flex items-center justify-center border-2 border-[#17A7FF]/50 shadow-[0_0_40px_rgba(23,167,255,0.3)] animate-pulse">
-              <div className="w-40 h-40 lg:w-52 lg:h-52 rounded-full bg-gray-800 flex items-center justify-center">
-                <span className="text-4xl lg:text-6xl">👨‍💻</span>
-              </div>
-            </div>
+            <div className="w-44 h-44 lg:w-56 lg:h-56 rounded-full 
+  bg-gradient-to-br from-[#17A7FF]/10 to-[#DE3484]/10 
+  flex items-center justify-center 
+  border-2 border-[#17A7FF]/10 
+  shadow-[0_0_12px_rgba(23,167,255,0.25)]">
+
+  <div className="w-40 h-40 lg:w-52 lg:h-52 rounded-full bg-gray-800 overflow-hidden">
+    <img
+      src="/images/sudesh.png"
+      alt="Profile"
+      className="w-full h-full object-cover rounded-full"
+    />
+  </div>
+</div>
+
 
             <div className="text-center lg:text-left">
               <h1 className="text-3xl lg:text-4xl xl:text-5xl mb-3">
