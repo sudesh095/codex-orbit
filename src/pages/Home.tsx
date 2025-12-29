@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import '../styles.css'
+import '../styles/globals.css'
 
 const withBase = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
@@ -38,6 +38,13 @@ const blogs = [
     subtitle: 'After 7 years of building Android UIs with XML, I decided to switch to Jetpack Compose — and it completely changed how I think about UI development. In this post, I share my personal experience, what motivated the change, and how Compose made my code cleaner, faster, and more fun to build. If you’re still working with XML layouts, this post will help you understand why the switch is absolutely worth it.',
     image: 'https://github.com/user-attachments/assets/443c6440-7419-4091-b588-b539e3edb2ea',
     file: withBase('blogs/xml-to-compose.md')
+  },
+   {
+    id: 'janky-frames-android-compose',
+    title: 'Janky Frames and Rendering Issues in Android',
+    subtitle: 'Learn how to identify and fix janky frames using Perfetto’s frame timeline and smart Compose optimizations. This guide breaks down real examples, performance traps, and practical fixes — so your Android app always feels fast, fluid, and professional.',
+    image: 'https://github.com/user-attachments/assets/a14f12e6-67c7-469d-9a2c-ac0e0b1a27ca',
+    file: withBase('blogs/janky-frames-android-compose.md')
   },
   {
     id: 'janky-frames-android-compose',

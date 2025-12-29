@@ -61,10 +61,12 @@ println("End")
 ```
 
 ### When to use it
+
 - When you want to avoid overhead of lambdas in performance-sensitive code.
 - When you want to use reified type parameters (we’ll cover this later).
 
 ### When Not to Use
+
 - If the function is very large, inlining it everywhere can blow up your code size.
 - If it’s called a lot, you might make your APK bigger without real benefit.
 
@@ -93,11 +95,12 @@ inline fun doWork(
 ### When to Use **noinline**
 
 Use **noinline** if:
+
 - You need to **store** a lambda into a variable.
 - You want to **return** the lambda.
 - You want to **pass** the lambda to another function.
 
-### Example
+### Example (noinline)
 
 ```kotlin
 inline fun doWork(
@@ -184,7 +187,7 @@ fun <T> isOfType(value: Any): Boolean {
 If you make the function inline and the type parameter reified, Kotlin will retain the type at
 runtime.
 
-### Example
+### Example: reified type check
 
 ```kotlin
 inline fun <reified T> isOfType(value: Any): Boolean {
@@ -214,12 +217,29 @@ val user: User = parseJson(userJson)
 
 ## Summary Table
 
-| Keyword                  |     Inlined?       |     Can store lambda? |     Can return? | Use Case                             |
-|--------------------------|--------------------|-----------------------|-----------------|--------------------------------------|
-| **inline**               |       Yes          |       No              |     Yes         | Performance, reified support         |
-| **noinline**             |       No           |       Yes             |   Yes           | Store, pass lambda                   |
-| **crossinline**          |       Yes          |       Yes             |   No            | Safe execution in threads/coroutines |
-| **reified**              |    Needs inline    |       Not a lambda    |   Yes           | Retain type info at runtime          |
+- **inline**
+  - Inlined: Yes
+  - Store lambda: No
+  - Return allowed: Yes
+  - Use case: Performance, **reified** support
+
+- **noinline**
+  - Inlined: No
+  - Store lambda: Yes
+  - Return allowed: Yes
+  - Use case: Store or pass lambda
+
+- **crossinline**
+  - Inlined: Yes
+  - Store lambda: Yes
+  - Return allowed: No
+  - Use case: Safe execution in threads/coroutines
+
+- **reified**
+  - Requires **inline**
+  - Not a lambda
+  - Return allowed: Yes
+  - Use case: Runtime type retention
 
 ---
 
@@ -241,7 +261,6 @@ Happy coding!
 
 ---
 
-*Written by Sudesh Kumar*
+Sudesh Kumar
 
 [www.codexorbit.com](https://www.codexorbit.com)
-

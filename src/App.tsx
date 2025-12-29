@@ -1,17 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Blog from './pages/Blog'
-import Layout from './Layout'
+import { Routes, Route } from "react-router-dom";
+import { Layout } from "./components/Layout";
+import { HomePage } from "./pages/HomePage";
+import { BlogsPage } from "./pages/BlogsPage";
+import { ContactPage } from "./pages/ContactPage";
+import BlogDetail from "./pages/BlogDetail";
 
 export default function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Layout>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="blogs/:blogId" element={<Blog />} />
-        </Route>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blogs" element={<BlogsPage />} />
+        <Route path="/blog/:id" element={<BlogDetail />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
-    </Router>
-  )
+    </Layout>
+  );
 }

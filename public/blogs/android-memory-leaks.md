@@ -2,24 +2,19 @@
 
 ## About me
 
-Hi, I’m **Sudesh Kumar**, a results-driven Android Developer with over **8 years** of experience
-building high-performance mobile apps.
+Hi, I’m **Sudesh Kumar**, a results-driven Android Developer with over **8 years** of experience building high-performance mobile apps.
 
-I specialize in **Kotlin**, **Jetpack Compose**, and **modern Android architecture patterns** like
-MVVM and Clean Architecture. Over the years, I’ve worked on everything from startups to
-enterprise-grade apps—focusing on scalability, performance, and great user experiences.
+I specialize in **Kotlin**, **Jetpack Compose**, and **modern Android architecture patterns** like MVVM and Clean Architecture. Over the years, I’ve worked on everything from startups to enterprise-grade apps—focusing on scalability, performance, and great user experiences.
 
-This blog is my way of sharing what I’ve learned (and continue to learn) with the Android community.
-Whether it’s code patterns, real project insights, or lessons from building in production—I’m here
-to make Android development a little easier and a lot more fun.
+This blog is my way of sharing what I’ve learned (and continue to learn) with the Android community. Whether it’s code patterns, real project insights, or lessons from building in production—I’m here to make Android development a little easier and a lot more fun.
 
-I’ve also started my own venture called **Codex Orbit**, where I continue crafting clean, scalable
-Android solutions. You can learn more or get in touch
-at [www.codexorbit.com](https://www.codexorbit.com).
+I’ve also started my own venture called **Codex Orbit**, where I continue crafting clean, scalable Android solutions. You can learn more or get in touch at [www.codexorbit.com](https://www.codexorbit.com).
 
 Thanks for reading—and welcome to the journey!
 
-# Understanding Memory Leaks in Android: A Hands-On Study
+---
+
+## Understanding Memory Leaks in Android: A Hands-On Study
 
 Memory leaks are one of the most common problems in Android development. They can lead to slow performance, app crashes, and frustrating user experiences. To help developers understand and prevent them, I created a small Android study app that demonstrates common memory leak scenarios and their safe alternatives, including examples in **Jetpack Compose**.
 
