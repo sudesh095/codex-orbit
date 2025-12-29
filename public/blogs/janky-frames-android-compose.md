@@ -31,6 +31,7 @@ Android aims to render UI at **60 frames per second (fps)**, which means every f
 If a frame takes longer, it causes a **stutter or lag**, known as *jank*.
 
 Typical causes include:
+
 - Heavy work on the main thread (CPU bound operations)
 - Inefficient recompositions in Jetpack Compose
 - Slow rendering of complex layouts or lists
@@ -42,6 +43,7 @@ Typical causes include:
 Perfetto is a system profiler that lets you visualize how long each frame takes to render.
 
 ### Steps to Capture Frame Timeline
+
 1. Open **Android Studio > Profiler > System Trace** or use **Perfetto UI (perfetto.dev)**.
 2. Record while interacting with your app (like scrolling or clicking buttons).
 3. Look for the **Choreographer#doFrame** and **UI Thread** tracks.
@@ -73,6 +75,7 @@ class SmoothViewModel : ViewModel() {
 ```
 
 And the UI:
+
 ```kotlin
 @Composable
 fun SmoothListScreen(onClick: (String) -> Unit, viewModel: SmoothViewModel = viewModel()) {
@@ -104,24 +107,31 @@ fun SmoothListScreen(onClick: (String) -> Unit, viewModel: SmoothViewModel = vie
 ## How To Fix It
 
 ### 1. Move Heavy Work Off the Main Thread
+
 Already done above using **Dispatchers.Default**. But ensure no UI logic or list transformation happens on the main thread.
 
 ### 2. Use **derivedStateOf** Carefully
+
 Wrap expensive or derived computations that depend on stable state.
 
 ```kotlin
 val derived by remember { derivedStateOf { processed } }
 ```
+
 This prevents unnecessary recompositions when the list hasn’t actually changed.
 
 ### 3. Snapshot Flow Optimization
+
 If using **snapshotFlow**, be cautious — it triggers every time the observed state changes. Only observe necessary states.
 
 ### 4. Use Pagination or Lazy Loading
+
 Instead of rendering 1000 items at once, load and display data in chunks.
 
 ### 5. Measure Improvements with Perfetto
+
 Before and after optimization, record the frame timeline again:
+
 - Before: Frame time ~125 ms (laggy)
 - After: Frame time ~16 ms (smooth)
 
@@ -130,6 +140,7 @@ Take screenshots from Perfetto to visualize improvement.
 ---
 
 ## Real-World Tips
+
 - Avoid large or deep Compose trees — use **key()** to maintain stable elements in LazyLists.
 - Keep animations lightweight; avoid running multiple animations simultaneously.
 - Use **CompositionLocalProvider** and **remember** to cache expensive objects.
@@ -139,12 +150,22 @@ Take screenshots from Perfetto to visualize improvement.
 
 ## Summary
 
-| Problem         |         Cause         |         Solution |
-|------------------|------------------------|-------------------|
-| Janky frames         |         Heavy main-thread work          |         Move to background with coroutines |
-| Frequent recompositions           |         Inefficient state observation         |         Use **derivedStateOf**, **remember** |
-| Slow rendering          |         Overdraw, deep layouts         |         Simplify UI tree |
-| Scroll lag          |         Too many items rendered         |          Use pagination |
+- **Janky Frames**  
+  - Cause: Heavy main-thread work  
+  - Solution: Move to background using coroutines  
+
+- **Frequent Recompositions**  
+  - Cause: Inefficient state observation  
+  - Solution: Use **derivedStateOf** and **remember**  
+
+- **Slow Rendering**  
+  - Cause: Overdraw and deep layouts  
+  - Solution: Simplify UI tree  
+
+- **Scroll Lag**  
+  - Cause: Too many items rendered  
+  - Solution: Use pagination  
+
 
 ---
 
@@ -154,6 +175,6 @@ You can explore the complete project on [GitHub](https://github.com/sudesh095/me
 
 Happy Coding, Thanks!
 
-**Sudesh Kumar**
+Sudesh Kumar
 
 [www.codexorbit.com](https://www.codexorbit.com)

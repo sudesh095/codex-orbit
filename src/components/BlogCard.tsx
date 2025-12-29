@@ -14,10 +14,7 @@ interface BlogCardProps {
 
 export function BlogCard({ id,title, excerpt, date, readTime, category, image }: BlogCardProps) {
   return (
-    // <Link
-    //   to={`/blogs/${id}`}
-    //   className="block h-full focus:outline-none"
-    // >
+     <Link to={`/blog/${id}`} className="h-full">
     <GlassCard 
        className="p-6 hover:border-[#DE3484]/50 transition-all duration-300 cursor-pointer group h-full flex flex-col">
       <div className="aspect-video bg-gradient-to-br from-[#17A7FF]/20 to-[#DE3484]/20 rounded-lg mb-4 overflow-hidden">
@@ -48,6 +45,6 @@ export function BlogCard({ id,title, excerpt, date, readTime, category, image }:
         </span>
       </div>
     </GlassCard>
-    // </Link>
+      </Link>
   );
 }

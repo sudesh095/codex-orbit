@@ -152,12 +152,20 @@ That means the **app** module can now directly use any public classes from both 
 
 ---
 
-## Visual Explanation
+### Dependency Visibility Comparison
 
-| What You Use   | Can Other Modules See It? | Faster Builds? | When to Use It                        |
-|----------------|---------------------------|----------------|---------------------------------------|
-| implementation | No                        | Yes            | When it’s just your module’s business |
-| api            | Yes                       | Not really     | When you want to share with others    |
+#### implementation
+
+- Hidden from other modules
+- Improves build performance
+- Best for internal dependencies
+
+#### api
+
+- Exposed to dependent modules
+- Slower builds due to propagation
+- Best for shared contracts
+
 
 ---
 

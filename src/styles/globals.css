@@ -103,6 +103,48 @@
   --color-ring: var(--ring);
 }
 
+/* For Blog */
+.prose-custom {
+  --tw-prose-body: #d1d5db;
+  --tw-prose-headings: #ffffff;
+  --tw-prose-links: #17a7ff;
+  --tw-prose-bold: #ffffff;
+  --tw-prose-counters: #9ca3af;
+  --tw-prose-bullets: #6b7280;
+  --tw-prose-hr: #374151;
+  --tw-prose-quotes: #e5e7eb;
+  --tw-prose-quote-borders: #17a7ff;
+  --tw-prose-code: #f472b6;
+  --tw-prose-pre-code: #e5e7eb;
+  --tw-prose-pre-bg: #020617;
+}
+
+.prose-custom pre {
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(23, 167, 255, 0.25);
+}
+
+.prose-custom code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.35rem;
+  font-size: 0.9em;
+}
+
+.prose-custom h2 {
+  margin-top: 3rem;
+}
+
+.prose-custom h3 {
+  margin-top: 2rem;
+}
+
+.prose-custom p {
+  margin-top: 1.25rem;
+}
+
+
 /* Small utility classes usable in JSX */
 .bg-background { background-color: var(--color-background); }
 .text-foreground { color: var(--color-foreground); }
