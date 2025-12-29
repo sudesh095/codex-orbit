@@ -27,7 +27,7 @@ const blogs = [
   },
    {
     id: 'out-of-memory-in-android',
-    title: 'Out Of Memory in Android: Causes, Examples & Fixes',
+    title: 'Out Of Memory in Android: Causes & Fixes',
     subtitle: ' Out Of Memory (OOM) errors are common in Android development when an app exceeds available memory. Learn the most common causes like large bitmaps, memory leaks, and static references. This blog provides simple Kotlin examples, practical fixes, and tips to optimize your app performance.',
     image: 'https://github.com/user-attachments/assets/a84540cf-a436-48f3-97a5-d8cc348d0924',
     file: withBase('blogs/out-of-memory-in-android.md')
@@ -40,6 +40,13 @@ const blogs = [
     file: withBase('blogs/xml-to-compose.md')
   },
    {
+    id: 'janky-frames-android-compose',
+    title: 'Janky Frames and Rendering Issues in Android',
+    subtitle: 'Learn how to identify and fix janky frames using Perfetto’s frame timeline and smart Compose optimizations. This guide breaks down real examples, performance traps, and practical fixes — so your Android app always feels fast, fluid, and professional.',
+    image: 'https://github.com/user-attachments/assets/a14f12e6-67c7-469d-9a2c-ac0e0b1a27ca',
+    file: withBase('blogs/janky-frames-android-compose.md')
+  },
+  {
     id: 'janky-frames-android-compose',
     title: 'Janky Frames and Rendering Issues in Android',
     subtitle: 'Learn how to identify and fix janky frames using Perfetto’s frame timeline and smart Compose optimizations. This guide breaks down real examples, performance traps, and practical fixes — so your Android app always feels fast, fluid, and professional.',
