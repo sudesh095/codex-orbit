@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import './styles/globals.css'
 
 export default function Layout() {
@@ -19,6 +20,9 @@ export default function Layout() {
       <footer className="footer">
         <p>© {new Date().getFullYear()} Codex Orbit. Building Apps, Growing Futures.</p>
       </footer>
+
+       {/* Vercel Speed Insights */}
+      <SpeedInsights />
     </>
   )
 }
